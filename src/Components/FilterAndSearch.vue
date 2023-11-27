@@ -30,7 +30,7 @@ const filteredCountries = computed(() => {
 
 </script>
 <template>
-	<v-container class="pt-8 mb-8 pt-md-12 mx-md-16 mx-lg-16">
+	<v-container class="pt-8 mb-8 pt-md-12 mx-md-14 mx-lg-24">
 		<v-row class="d-flex flex-column flex-sm-row justify-space-between align-start">
 			<v-col cols="12" sm="8" md="5">
 				<v-text-field
@@ -43,8 +43,7 @@ const filteredCountries = computed(() => {
 					v-model="searchText"
 				></v-text-field>
 			</v-col>
-			<v-spacer></v-spacer>
-			<v-col class="mr-md-n8 " cols="8" sm="4" md="2">
+			<v-col class="mr-md-n2 mr-lg-n16" cols="8" sm="4" md="4" lg="2" >
 				<v-select
 					v-model="selectedRegion"
 					density="compact"
@@ -53,12 +52,13 @@ const filteredCountries = computed(() => {
 					append-inner-icon="fa-solid fa-caret-down"
 					variant="outlined"
 					:items="regions"
+					class="mr-md-n12"
 				></v-select>
 			</v-col>
 		</v-row>
 	</v-container>
 	<div>
-		<v-row class="flex items-center justify-center mx-8 mx-sm-14">
+		<v-row class="flex mx-8 mx-sm-12">
 			<v-col v-for="(country, index) in filteredCountries" cols="12"  sm="6" md="3" :key="index" >
 				<Country :data="country"/>
 			</v-col>

@@ -2,8 +2,9 @@ import { createApp } from 'vue';
 import App from '@/App.vue';
 import '@/style.scss'
 import { createVuetify } from 'vuetify'
+import router from '@/route/index'
 
-const app = createApp(App);
+const app = createApp(App)
 
 const messages = {
   en: {
@@ -20,9 +21,9 @@ const messages = {
     search: 'Rechercher un pays',
     filter: 'Filtrer par Région',
     allRegions: 'Toutes les régions',
-    populaton: 'population',
-    region: 'région',
-    capital: 'capital'
+    population: 'Population',
+    region: 'Région',
+    capital: 'Capital'
   }
 }
 
@@ -56,6 +57,7 @@ const vuetify = createVuetify({
   }
 });
 
-app.use(vuetify);
+app.use(vuetify)
+app.use(router)
 
-app.mount('#app');
+app.mount('#app')
