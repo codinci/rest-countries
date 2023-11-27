@@ -1,0 +1,30 @@
+export interface ICountry {
+	name: String,
+	topLevelDomain?: Object,
+	alpha2Code?: String,
+	alpha3Code?: String,
+	callingCodes?: Object,
+	capital?: String,
+	altSpellings?: Object,
+	subRegion?: String,
+	region?: String,
+	population: Number,
+	latlng?: Object,
+	demonym?: String,
+	area?: Number,
+	timezones?: Object,
+	borders?: Object,
+	nativeName?: String,
+	numericCode?: String,
+	flags: {
+		svg: string;
+		png: string;
+	},
+	currencies?: Object,
+	languages?: Object,
+	translations?: Object,
+	flag?: String,
+	regionalBlocs?: Object,
+	cioc?: String,
+	independent?: Boolean,
+}

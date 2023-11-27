@@ -7,10 +7,14 @@ export default defineConfig({
   plugins: [
     vue({
       template: {
-        
         transformAssetUrls,
       }
     }),
     vuetify({ styles: { configFile: 'src/style.scss' } }),
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 })
