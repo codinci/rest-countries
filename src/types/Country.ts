@@ -1,29 +1,67 @@
 export interface ICountry {
-	name: String,
-	topLevelDomain?: Object,
-	alpha2Code?: String,
-	alpha3Code?: String,
-	callingCodes?: Object,
-	capital?: String,
-	altSpellings?: Object,
-	subRegion?: String,
-	region?: String,
+	name: {
+		common?: string,
+		official?: string,
+		nativeName?: {
+			[key: string]: {
+				common: string;
+				official: string;
+			}
+		}
+	},
+	tld: Array<string>,
+	cca2?: string,
+	ccn3?: string,
+	cca3: string,
+	capital?: Array<string>,
+	status?: string,
+	unMember?: Boolean,
+	idd?: {
+		root?: string,
+		suffixes?: Array<string>,
+	},
+	altSpellings?: Array<string>,
+	subRegion?: string,
+	subregion?: string,
+	region?: string,
 	population: Number,
-	latlng?: Object,
-	demonym?: String,
+	latlng?: Array<Number>,
+	landlocked?: Boolean,
+	demonyms?: Object,
 	area?: Number,
-	timezones?: Object,
-	borders?: Object,
-	nativeName?: String,
-	numericCode?: String,
+	maps?: {
+		googleMaps?: string,
+		openStreetMaps?: string,
+	},
+	car?: {
+		signs?: Array<string>,
+		side?: string,
+	},
+	timezones?: Array<string>,
+	continents?: Array<string>,
+	borders?: Array<string>,
 	flags: {
-		svg: string;
-		png: string;
+		svg: string,
+		png: string,
 	},
 	currencies?: Object,
 	languages?: Object,
 	translations?: Object,
 	flag?: String,
+	coatOfArms?: {
+		png?: string,
+		svg?: string,
+	},
+	startOfWeek?: string,
+	capitalInfo?: {
+		latlng?: Array<Number>
+	},
+	postalCode?: {
+		format?: string,
+		regex?: string,
+	},
+	gini?: Object,
+	fifa?: string,
 	regionalBlocs?: Object,
 	cioc?: String,
 	independent?: Boolean,

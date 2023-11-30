@@ -11,19 +11,31 @@ const messages = {
     title: 'Where in the world?',
     search: 'Search for a country',
     filter: 'Filter by Region',
-    allRegions: 'All regions',
     population: 'Population',
     region: 'Region',
-    capital: 'Capital'
+    capital: 'Capital',
+    nativeName: 'Native Name',
+    languages: 'Languages',
+    subRegion: 'Sub Region',
+    borderCountries: 'Border Countries',
+    topLevelDomain: 'Top Level Domain',
+    currencies: 'Currencies',
+    back: 'Back'
   },
   fr: {
     title: 'Où dans le monde?',
     search: 'Rechercher un pays',
     filter: 'Filtrer par Région',
-    allRegions: 'Toutes les régions',
     population: 'Population',
     region: 'Région',
-    capital: 'Capital'
+    capital: 'Capital',
+    nativeName: 'Nom Natif',
+    languages: 'Langages',
+    subRegion: 'Sous-Région',
+    borderCountries: 'Pays Frontaliers',
+    topLevelDomain: 'Domaine de premier niveau',
+    currencies: 'Monnaies',
+    back: 'Dos',
   }
 }
 

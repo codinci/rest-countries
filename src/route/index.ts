@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import FilterAndSearchVue from '@/Components/FilterAndSearch.vue'
+import CountryPage from '@/pages/CountryPage.vue'
+import HomePage from '@/pages/HomePage.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -7,10 +8,18 @@ const router = createRouter({
 		{
 			path: '/',
 			name: "home",
-			component: FilterAndSearchVue,
+			component: HomePage,
 			meta: {
 				title: "Home",
 			},
+		},
+		{
+			path: '/:country',
+			name: "country",
+			component: CountryPage,
+			meta: {
+				title: "Country"
+			}
 		}
 	]
 })

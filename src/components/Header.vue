@@ -23,8 +23,8 @@ const languages = {
 </script>
 
 <template>
-  <header class="d-flex justify-space-between pa-2 mx-2 my-2 mx-md-16 ">
-    <h1 class="text-subtitle-1 text-primary text-md-h5 mx-md-2">{{ t('$vuetify.title') }}</h1>
+  <header class="d-flex justify-space-between pa-2 mx-2 my-2 mx-md-16">
+    <h1 class="text-subtitle-1 text-primary text-md-h5">{{ t('$vuetify.title') }}</h1>
     <aside class="d-flex">
       <input v-model="darkMode" type="checkbox" class="checkbox" id="checkbox">
       <label for="checkbox" class="checkbox-label">

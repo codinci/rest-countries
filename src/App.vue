@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import Header from '@/Components/Header.vue'
+import Header from '@/components/Header.vue';
+
 </script>
 
 <template>
   <Header/>
   <main class="bg-surface mt-4">
     <router-view v-slot="{ Component }">
-      <transition name="page" mode="out-in">
-        <component :is="Component" />
-      </transition>
+       <component :is="Component" />
+      <!-- <transition  name="page" mode="out-in">
+
+      </transition> -->
     </router-view>
   </main>
 
