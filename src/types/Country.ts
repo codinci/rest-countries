@@ -21,7 +21,6 @@ export interface ICountry {
 		suffixes?: Array<string>,
 	},
 	altSpellings?: Array<string>,
-	subRegion?: string,
 	subregion?: string,
 	region?: string,
 	population: Number,

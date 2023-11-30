@@ -88,10 +88,24 @@ const borderCountries = await getBorderCountry(countryData[0])
 				<!-- Image Column -->
 				<v-col cols="12" md="5" class="">
 					<v-img
+						:lazy-src="countryData[0].flags.svg"
 						:src="countryData[0].flags.png"
 						:alt="`${route.params.country}-flag`"
 						class="fill-height"
-					></v-img>
+					>
+						<template v-slot:placeholder>
+							<v-row
+								class="fill-height ma-0"
+								align="center"
+								justify="center"
+							>
+								<v-progress-circular
+								indeterminate
+								color="grey-lighten-5"
+								></v-progress-circular>
+							</v-row>
+						</template>
+				</v-img>
 				</v-col>
 				<v-spacer></v-spacer>
 				<!-- Country Details Columns -->

@@ -21,7 +21,24 @@ const goToCountry = (country: ICountry) => {
 </script>
 <template>
 	<v-card v-if="props.data" class="mx-8 mx-md-2 pb-4" width="280" @click="goToCountry(props.data)">
-		<img width="280" height="154" :src="props.data.flags.png" :alt="`${props.data.name} flag`"/>
+		<v-img width="280" height="154"
+			:lazy-src="props.data.flags.svg"
+			:src="props.data.flags.png"
+			:alt="`${props.data.name}-flag`"
+		>
+			<template v-slot:placeholder>
+				<v-row
+					class="fill-height ma-0"
+					align="center"
+					justify="center"
+				>
+					<v-progress-circular
+					indeterminate
+					color="grey-lighten-5"
+					></v-progress-circular>
+				</v-row>
+			</template>
+		</v-img>
 		<h3 class="mt-2 mx-4 text-h6 font-weight-bold"> {{ props.data.name.common }}</h3>
 		<p class="mt-2 mx-4 font-weight-bold">
 			{{ t('$vuetify.population') }}:
