@@ -25,16 +25,28 @@ const regions = [
 	'All Regions',
 	...new Set(countriesData.map(country => country.region))
 ]
-
 const filteredCountries = computed(() => {
-  return (!searchText.value?.trim() && selectedRegion.value === 'All Regions') ?
-	  countriesData :
-	  (searchText.value) ?
-		countriesData.filter(country =>
-		  	country.name?.common?.toLowerCase()
-				.startsWith(searchText.value?.trim().toLowerCase())
-		) :
-    	countriesData.filter(country => country.region === selectedRegion.value)
+  const trimmedSearchText = searchText.value?.trim().toLowerCase();
+  const selectedRegionValue = selectedRegion.value;
+
+  if (!trimmedSearchText && selectedRegionValue === 'All Regions') {
+    return countriesData;
+  }
+
+  return countriesData.filter((country) => {
+    const countryName = country.name?.common?.toLowerCase();
+    const countryRegion = country.region;
+
+    if (trimmedSearchText && selectedRegionValue !== 'All Regions') {
+      return (
+        countryName?.startsWith(trimmedSearchText) && countryRegion === selectedRegionValue
+      );
+    } else if (trimmedSearchText) {
+      return countryName?.startsWith(trimmedSearchText);
+    } else {
+      return countryRegion === selectedRegionValue;
+    }
+  });
 });
 
 </script>
