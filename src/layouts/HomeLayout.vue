@@ -39,8 +39,8 @@ const filteredCountries = computed(() => {
 
 </script>
 <template>
-	<div class="">
-		<v-row class="d-flex flex-column flex-sm-row justify-space-between align-start pt-4 ">
+	<div>
+		<v-row class="d-flex flex-column flex-sm-row justify-space-between align-start pt-4">
 			<v-col cols="9" sm="8" md="5">
 				<v-text-field
 					density="compact"
@@ -52,7 +52,7 @@ const filteredCountries = computed(() => {
 					v-model="searchText"
 				></v-text-field>
 			</v-col>
-			<v-col class="mr-md-n2 mr-lg-n16" cols="6" sm="4" md="4" lg="2" >
+			<v-col class="mr-md-n2 mr-lg-n16" cols="6" sm="4" md="4" lg="2">
 				<v-select
 					v-model="selectedRegion"
 					density="compact"

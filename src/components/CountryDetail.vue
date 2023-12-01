@@ -83,7 +83,7 @@ const borderCountries = await getBorderCountry(countryData[0])
 </script>
 <template>
 	<div class="d-flex mx-2 mx-md-12 pt-8">
-		<v-card class="d-flex-column d-flex-md-row justify-space-between " width="1600">
+		<v-card class="d-flex-column d-flex-md-row justify-space-between" width="1600">
 			<v-row class="mx-4">
 				<!-- Image Column -->
 				<v-col cols="12" md="5" class="">

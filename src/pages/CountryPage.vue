@@ -20,7 +20,14 @@ const goBack = () => {
 
 		<Suspense>
 			<CountryDetail/>
-			<template #fallback>Loading...</template>
+			<template #fallback>
+				<div class="d-flex mx-2 mx-md-12 pt-8">
+					<v-skeleton-loader
+						class="d-flex-column d-flex-md-row justify-space-between"
+						width="1600" type="card"
+					></v-skeleton-loader>
+				</div>
+			</template>
 		</Suspense>
 
 </template>
