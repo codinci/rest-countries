@@ -79,7 +79,7 @@ const filteredCountries = computed(() => {
 		</v-row>
 		<v-row class="d-flex justify-space-between">
 			<v-col v-for="(country, index) in filteredCountries" :key="index"
-				cols="12" sm="6" md="2" class="mx-2 mx-md-12 mb-4"
+				cols="12" sm="5" md="2" class="mx-2 mx-md-12 mb-4"
 			>
 				<CountryCard :data="country"/>
 			</v-col>
