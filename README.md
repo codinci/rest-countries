@@ -47,6 +47,7 @@ Users should be able to:
 ### Built with
 
 - [Vue JS](https://vuejs.org) - JS Framework
+- [Font Awesome](https://fontawesome.com) - Used for icons
 - [Axios](https://axios-http.com/docs/intro) - Http requests
 - [Rest countries](https://restcountries.com/)- Countries API
 - [Vuetify](https://vuetifyjs.com/en/) - Style component framework
