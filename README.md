@@ -1,22 +1,27 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a good understanding of HTML, CSS, and JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it like in the designs.
-
-You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
-
-Your users should be able to:
+Users should be able to:
 
 - See all countries from the API on the homepage
 - Search for a country using an `input` field
@@ -25,76 +30,146 @@ Your users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-**⚠️ NOTE ⚠️: Sometimes the REST Countries API can go down. We've added a `data.json` file with all the country data if you prefer to use that instead. However, please be aware that the data in the JSON file might not be up-to-date.**
+![](./screenshot.jpg)
 
-## Where to find everything
+Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Your task is to build out the project to the designs inside the `/design` folder. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
-In this challenge, you will find mobile and desktop designs in light and dark mode color schemes for both pages.
+Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
-There are no assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use an icon font library for the icons.
+### Links
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Solution URL: [Github](https://github.com/codinci/rest-countries)
+- Live Site URL: [Vercel](https://rest-countries-six-lilac.vercel.app/)
 
-## Building your project
+## My process
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Built with
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- [Vue JS](https://vuejs.org) - JS Framework
+- [Axios](https://axios-http.com/docs/intro) - Http requests
+- [Rest countries](https://restcountries.com/)- Countries API
+- [Vuetify](https://vuetifyjs.com/en/) - Style component framework
+- [Vue-router](https://router.vuejs.org) - Used for routing in vue3
+- [TypeScript](https://www.typescriptlang.org/) - JS with syntax for types
 
-## Deploying your project
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+### What I learned
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+I learnt on Vue3 and its composition API and integrating typescript into the build process.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+- Changing the vuetify default font family
 
-## Create a custom `README.md`
+```style.css
+@use 'vuetify' with (
+  $utilities: yes,
+  $color-pack: false,
+  $body-font-family: 'Nunito Sans'
+);
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- Setting the different themes and theme colors
+```main.ts
+const vuetify = createVuetify({
+  locale: {
+    locale: 'en',
+    fallback: 'fr',
+    messages,
+  },
+  theme: {
+    defaultTheme: 'light',
+    themes: {
+      light: {
+        dark: false,
+        colors: {
+          surface: 'hsl(0, 0%, 98%)',
+          background: 'hsl(0, 0%, 100%)',
+          primary: 'hsl(200, 15%, 8%)',
+          secondary: 'hsl(0, 0%, 52%)',
+        },
+      },
+      dark: {
+        dark: true,
+        colors: {
+          background: 'hsl(207, 26%, 17%)',
+          surface: 'hsl(209, 23%, 22%)',
+          primary: 'hsl(0, 0%, 100%)',
+        },
+      }
+    }
+  }
+});
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```
 
-## Submitting your solution
+- Using vuetify's internationalization for a user to toggle between different languages and toggle theme
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```header.vue
+<script setup lang="ts">
+import { ref,watch } from 'vue'
+import { useTheme, useLocale } from 'vuetify'
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+const darkMode = ref(false)
+const theme = useTheme()
+const { t, current } = useLocale()
 
-## Sharing your solution
 
-There are multiple places you can share your solution:
+// Watch for changes in darkMode and update the theme accordingly
+watch(darkMode, (newVal) => {
+  theme.global.name.value = newVal ? 'dark' : 'light';
+});
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+function changeLocale(locale: string) {
+  current.value = locale;
+}
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+const languages = {
+  en: 'English',
+  fr: 'French',
+};
+```
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- Use of Suspense
+```CountryPage.vue
+<v-container class="pt-8 mb-8 pt-md-12 mx-md-14 mx-lg-24">
+	<v-row class="d-flex justify-start pt-12">
+		<v-btn class="px-8 ml-4" prepend-icon="fa-solid fa-arrow-left" @click="goBack">
+			{{t('$vuetify.back')}}
+		</v-btn>
+	</v-row>
+</v-container>
 
-## Got feedback for us?
+<Suspense>
+	<CountryDetail/>
+	<template #fallback>
+		<div class="d-flex mx-2 mx-md-12 pt-8">
+			<v-skeleton-loader
+				class="d-flex-column d-flex-md-row justify-space-between"
+				width="1600" type="card"
+			></v-skeleton-loader>
+		</div>
+	</template>
+</Suspense>
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+```
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Continued development
 
-**Have fun building!** 🚀
+- I would love to make more styling enhancements especially on loading states.
+- A user to also be able to navigate to the details of the border countries under the country details page.
+
+### Useful resources
+
+- [Stack Overflow](https://stackoverflow.com/questions/45598884/change-default-font-in-vuetify) - This stackoverflow page helped me learn how to configure the font family in vuetify.
+- [Vuemastery](https://www.vuemastery.com/blog/async-with-suspense/) - This is an amazing article which helped me finally understand suspense in Vue3 and how to navigate through async functions in my components.
+
+## Author
+
+- Frontend Mentor - [codinci](https://www.frontendmentor.io/profile/codinci)
+- Github - [codinci](https://github.com/codinci)

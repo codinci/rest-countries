@@ -35,7 +35,7 @@ const messages = {
     borderCountries: 'Pays Frontaliers',
     topLevelDomain: 'Domaine de premier niveau',
     currencies: 'Monnaies',
-    back: 'Dos',
+    back: 'Le Dos',
   }
 }
 

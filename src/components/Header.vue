@@ -92,14 +92,7 @@ const languages = {
   transform: translateX(24px);
 }
 
-
-
 h1 {
   font-weight: 800;
 }
-
-
-
-
-
 </style>
